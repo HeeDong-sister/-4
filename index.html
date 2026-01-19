@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>초등 교사 교육과정 도우미</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Vis.js Network -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+
+    <!-- App Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>
+            <span>🏫</span> 교사용 교육과정 & 자료 맵
+            <span class="subtitle">Interactive Curriculum Map</span>
+        </h1>
+        
+        <div id="file-upload-wrapper">
+            <button class="upload-btn">📂 새 TTL 파일 열기</button>
+            <input type="file" id="ttl-file-input" accept=".ttl,.txt">
+        </div>
+    </header>
+
+    <div id="main-container">
+        <!-- Visualization Area -->
+        <div id="graph-container">
+            <div id="mynetwork"></div>
+            
+            <div class="legend">
+                <div class="legend-item"><span class="dot std"></span> 성취기준 (Standard)</div>
+                <div class="legend-item"><span class="dot res"></span> 학습자료 (Resource)</div>
+            </div>
+        </div>
+
+        <!-- Chatbot Area -->
+        <div id="chat-container">
+            <div class="chat-header">
+                💬 AI 조교
+            </div>
+            
+            <div id="chat-messages">
+                <!-- Messages will appear here -->
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="user-input" placeholder="성취기준 코드나 키워드를 입력하세요...">
+                <button id="send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Script -->
+    <script src="script.js"></script>
+</body>
+</html>
